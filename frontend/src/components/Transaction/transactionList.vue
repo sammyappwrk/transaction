@@ -71,7 +71,7 @@ export default {
     async getProducts() {
       try {
         this.items = [];
-        const response = await axios.get('http://localhost:3000/'+this.currentPage+'/'+this.limit);
+        const response = await axios.get('http://localhost:3000/listTranscation/'+this.currentPage+'/'+this.limit);
         console.log(response.data);
         //alert(response.data);
          this.pager = response.data.pager;

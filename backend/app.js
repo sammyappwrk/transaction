@@ -50,7 +50,7 @@ connection.connect((err) => {
   if (err) throw err;
   console.log('Connected to MySQL Server!');
 });*/
-app.get("/:page/:limit",(req,res) => {
+app.get("/listTranscation/:page/:limit",(req,res) => {
   var page = req.params.page;
   let limit = parseInt(req.params.limit);
   let offset = 0 + (req.params.page - 1) * limit;
@@ -61,7 +61,7 @@ app.get("/:page/:limit",(req,res) => {
   }).then(function (article) {
    const pager = paginate(article.count, page, limit);
     res.send({article,pager});
-})
+});
     //connection.query('SELECT * from transaction LIMIT 1', (err, rows) => {
         //if(err) throw err;
       //  res.send(rows);
