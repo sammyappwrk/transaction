@@ -26,7 +26,7 @@
         </tr>
       </tbody>
     </table>
-    <div class="card-footer pb-0 pt-3">
+    <div v-if="pager.pages && pager.pages.length > 1" class="card-footer pb-0 pt-3">
             <ul v-if="pager.pages && pager.pages.length" class="pagination">
                 <li :class="{'disabled':pager.currentPage == 1}" class="page-item first-item">
                     <a @click="updatePage(1)"  class="page-link">First</a>
